@@ -16,6 +16,12 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+    <% if flash[:errors] %>
+      <p class="alert alert-danger"><%= flash[:errors] %></p>
+    <% end %>
+
+    <%= link_to "my groups", user_groups_path(current_user) %>
+
 
     <p class="navbar-text pull-right">
     <% if user_signed_in? %>

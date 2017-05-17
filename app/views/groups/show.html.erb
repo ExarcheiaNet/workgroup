@@ -1,0 +1,18 @@
+<h1> <%= @group.name %></h1>
+
+
+
+new status: 
+
+<%= form_for [@group, GroupStatus.new ] do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :group_id, value: @group.id %>
+  <%= f.text_field :text %>
+  <%= f.submit "Create" %>
+<% end %> 
+
+<ul>
+  <% @group.statuses.each do |status| %>
+    <li><%= status.text %> - <%= status.updated_at %></li>
+  <% end %>
+</ul>

@@ -1,5 +1,15 @@
-<h2> groupppin!!! </h2>
+<h2> groupin </h2>
+
+
+new group: 
+
+<%= form_for [current_user, Group.new] do |f| %>
+  <%= hidden_field_tag(:user_id, current_user.id) %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create" %>
+<% end %> 
 
 <% @groups.each do |group| %>
-  <%= group.name %>
+  
+  <%= link_to(group.name, user_group_path(current_user, group)) %> |  <%= last_status(group)  %>
 <% end %>
