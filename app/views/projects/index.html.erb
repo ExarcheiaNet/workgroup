@@ -1,0 +1,15 @@
+<h2> projectin </h2>
+
+
+new project: 
+
+<%= form_for [current_user, Project.new] do |f| %>
+  <%= hidden_field_tag(:user_id, current_user.id) %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create" %>
+<% end %> 
+
+<% @projects.each do |project| %>
+  
+  <%= link_to(project.name, user_project_path(current_user, project)) %> |  <%= last_status(project)  %>
+<% end %>

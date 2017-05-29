@@ -3,8 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_and_belongs_to_many :groups
+  has_and_belongs_to_many :projects
 
-  has_many :group_statuses
-  alias_attribute :statuses, :group_statuses
+  has_many :project_statuses
+  alias_attribute :statuses, :project_statuses
 end
