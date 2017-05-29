@@ -1,9 +1,5 @@
 <h1> <%= @project.name %></h1>
 
-
-
-add member: 
-
 <%= form_for @project do |f| %>
   <%= f.select :user_ids do %>
     <%= options_from_collection_for_select(User.all, :id, :email) %> 
@@ -12,20 +8,17 @@ add member:
   <%= f.submit "Add User" %>
 <% end %> 
 
-<ul>
+<ul class="users">
   <% @project.users.each do |user| %>
     <li><%= user.email %> </li>
   <% end %>
 </ul>
 
-
-new status: 
-
 <%= form_for [@project, ProjectStatus.new ] do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :project_id, value: @project.id %>
-  <%= f.text_field :text %>
-  <%= f.submit "Create" %>
+  <%= f.text_field :text, placeholder: "New status..." %>
+  <%= f.submit "Update Status" %>
 <% end %> 
 
 <ul>

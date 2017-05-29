@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  validates_presence_of :name
+
   has_and_belongs_to_many :users
 
   has_one :parent, class_name: 'Project', foreign_key: 'parent_id'

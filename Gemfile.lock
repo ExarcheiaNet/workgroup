@@ -58,6 +58,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubis (2.7.0)
+    evil_icons (1.9.0)
     execjs (2.7.0)
     ffi (1.9.18)
     globalid (0.4.0)
@@ -169,6 +170,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  evil_icons
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

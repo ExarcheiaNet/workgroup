@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = current_user.projects
+    @projects = current_user.projects.where(parent_id: nil).includes(:children)
     render :index
   end
 

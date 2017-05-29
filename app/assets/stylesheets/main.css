@@ -1,0 +1,68 @@
+nav.primary ul,
+nav.primary ul li {
+  margin: 0px;
+}
+
+nav.primary ul li {
+  display: inline;
+  float: left;
+  position: relative;
+}
+
+nav.primary ul li a {
+  display: inline-block;
+  line-height: 2em;
+  padding: 0 1em;
+  color: #1EAEDB;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+nav.primary ul li a:hover {
+  color: black;
+}
+
+
+.projects {
+  list-style: none;
+}
+
+.icon--ei-chevron-right {
+  cursor: pointer;
+}
+
+form {
+  text-align: center;
+}
+
+
+li.project {
+  font-size: 2em;
+  border-bottom: 0.02em solid black;
+  padding: 0.5em;
+  margin: 0.2em;
+}
+
+li .icon {
+  vertical-align: middle;
+}
+
+li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.submit {
+  border: none;
+  vertical-align: middle;
+}
+
+.icon.custom-icon {
+  fill: #1EAEDB;
+}
+
+ul.users {
+ list-style: none;
+ list 
+}

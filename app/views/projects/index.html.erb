@@ -1,15 +1,22 @@
-<h2> projectin </h2>
+<h1> Projects </h1>
 
-
-new project: 
-
-<%= form_for [current_user, Project.new] do |f| %>
-  <%= hidden_field_tag(:user_id, current_user.id) %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create" %>
-<% end %> 
-
-<% @projects.each do |project| %>
+<div class="row">
+  <div class="twelve columns">
+    <%= form_for [current_user, Project.new] do |f| %>
+      <%= hidden_field_tag(:user_id, current_user.id) %>
+      <%= f.text_field :name, placeholder: "New project name..." %>
+        <button type="submit" class="submit"><%= evil_icon 'ei-plus', size: :m, class: "custom-icon" %></button>
+    <% end %> 
   
-  <%= link_to(project.name, user_project_path(current_user, project)) %> |  <%= last_status(project)  %>
-<% end %>
+    <ul class="projects">
+      <% @projects.each do |project| %>
+        <li class="project">
+          <% unless project.children.empty? %>
+            <%= evil_icon 'ei-chevron-right', size: :m, class: 'custom-icon' %>
+          <% end %>
+          <%= link_to(project.name, user_project_path(current_user, project)) %> |  <%= last_status(project) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
