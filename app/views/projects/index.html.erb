@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="twelve columns">
-    <%= form_for [current_user, Project.new] do |f| %>
+    <%= form_for [current_user, Project.new], {html: {class: "project-form"}} do |f| %>
       <%= hidden_field_tag(:user_id, current_user.id) %>
       <%= f.text_field :name, placeholder: "New project name..." %>
         <button type="submit" class="submit"><%= evil_icon 'ei-plus', size: :m, class: "custom-icon" %></button>
@@ -14,7 +14,7 @@
           <% unless project.children.empty? %>
             <%= evil_icon 'ei-chevron-right', size: :m, class: 'custom-icon' %>
           <% end %>
-          <%= link_to(project.name, user_project_path(current_user, project)) %> |  <%= last_status(project) %>
+          <%= link_to(project.name, user_project_path(current_user, project)) %>:  <%= last_status(project) %>
         </li>
       <% end %>
     </ul>

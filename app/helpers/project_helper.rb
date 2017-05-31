@@ -7,10 +7,14 @@ module ProjectHelper
 
   def last_text_and_date(project)
     if last_status = project.statuses&.last 
-      {text: last_status.text, date: time_ago_in_words(last_status.updated_at)}
+      text_and_date_for_status(last_status)
     else
       empty_status
     end
+  end
+
+  def text_and_date_for_status(status)
+    {text: status.text, date: time_ago_in_words(status.updated_at)}
   end
 
   def empty_status

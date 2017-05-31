@@ -1,6 +1,11 @@
+.container {
+  font-family: monospace;
+}
+
 nav.primary ul,
 nav.primary ul li {
   margin: 0px;
+  padding-bottom: 3em;
 }
 
 nav.primary ul li {
@@ -23,16 +28,50 @@ nav.primary ul li a:hover {
   color: black;
 }
 
-
 .projects {
   list-style: none;
+}
+
+.statuses {
+  text-align: center;
+}
+
+.users {
+  padding: 1em;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.current-status {
+  text-align: center;
+  margin-bottom: 2em;  
+  border-bottom: .1em solid #1EAEDB;
+}
+.current-status .status {
+  font-size: 2.5em;
+}
+
+ul.recent-statuses {
+  list-style: none;
+}
+
+.recent-statuses .status {
+  font-size: 2em;
+}
+
+.current-status .status-date {
+  font-style: italic;
 }
 
 .icon--ei-chevron-right {
   cursor: pointer;
 }
 
-form {
+.project-title {
+  margin-bottom: 1em;
+}
+
+.project-form {
   text-align: center;
 }
 
@@ -62,7 +101,11 @@ button.submit {
   fill: #1EAEDB;
 }
 
-ul.users {
+ul.users-list {
  list-style: none;
  list 
+}
+
+.updated-at {
+  font-weight: thin
 }
